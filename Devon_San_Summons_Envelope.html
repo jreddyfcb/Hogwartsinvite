@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Summons to a Secret Journey</title>
+<link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=IM+Fell+English&display=swap" rel="stylesheet">
+<style>
+  body{
+    margin:0;padding:0;background:#111;color:#2b251c;
+    font-family:'IM Fell English', Georgia, serif;
+  }
+  .page{
+    min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;
+    background:radial-gradient(circle at top,rgba(0,0,0,.6),transparent 60%),#1a1a1a;
+  }
+  .card, .scroll{
+    background:#efe6d5;max-width:850px;width:100%;padding:40px 32px;border-radius:16px;
+    box-shadow:0 20px 40px rgba(0,0,0,.6), inset 0 0 120px rgba(255,255,255,.3);
+    border:1px solid #d3c6aa;
+  }
+  h1{
+    font-family:'Uncial Antiqua', serif;text-align:center;font-size:2.2em;margin:0 0 4px;
+  }
+  .sub{text-align:center;font-style:italic;margin:0 0 16px;}
+  .rule{height:1px;background:linear-gradient(90deg,transparent,#c7a74a,transparent);margin:14px 0 24px;}
+  .para{font-size:1.05em;line-height:1.6;margin:14px 0;}
+  .seal-wrap{display:flex;justify-content:center;margin:24px 0;}
+  .seal{
+    width:100px;height:100px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#b14a4a,#6a1a1a 70%);
+    box-shadow:0 6px 16px rgba(0,0,0,.5), inset 0 4px 12px rgba(0,0,0,.6);
+    cursor:pointer;display:flex;align-items:center;justify-content:center;
+    color:#f6e7c8;font-size:2em;font-weight:bold;
+  }
+  .seal:hover{transform:scale(1.05);transition:0.2s;}
+  .hidden{display:none;}
+  .token{margin-top:18px;padding:18px;border:2px solid #a88b36;border-radius:14px;background:#f8f1da;
+    box-shadow:inset 0 0 40px rgba(0,0,0,.08);}
+  .token h3{font-family:'Uncial Antiqua', serif;margin-top:0;}
+  ul{margin:0;padding-left:20px;}
+  .signature{text-align:right;margin-top:24px;}
+  .muted{opacity:.7;font-size:.9em;text-align:center;}
+  .fade-in{animation:fadeIn 1s forwards;}
+  @keyframes fadeIn{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:none;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <!-- Stage 1: Parchment card with address -->
+  <div id="envelope" class="card fade-in">
+    <p class="para" style="text-align:center;font-family:'Uncial Antiqua', serif;font-size:1.3em;">
+      To Mr. Devon San,<br/>the boy in the upstairs-left chamber
+    </p>
+    <div class="seal-wrap">
+      <div id="envelopeSeal" class="seal" role="button" aria-label="Break the seal">★</div>
+    </div>
+    <p class="muted"><em>Break the seal to open your summons…</em></p>
+  </div>
+
+  <!-- Stage 2: Hogwarts letter -->
+  <main id="letter" class="scroll hidden">
+    <h1>HOGWARTS SCHOOL OF WITCHCRAFT AND WIZARDRY</h1>
+    <p class="sub">Headmistress: Professor Minerva McGonagall</p>
+    <div class="rule"></div>
+    <p class="para"><em>To Mr. Devon San, in the upstairs-left chamber,</em></p>
+    <p class="para">
+      It is my great pleasure to inform you that you have been chosen to undertake a most curious
+      <strong>Trial of Admission</strong> to Hogwarts School of Witchcraft and Wizardry. Your journey begins
+      September 17th at precisely 3:30 p.m., when your passage across the seas shall depart, carrying you to a city
+      alive with enchantments and bustling with both wizard and Muggle alike.
+    </p>
+    <p class="para">
+      The trial will test your wit, courage, and adaptability. You will wander through grand halls of enchantments where
+      moving pictures breathe life into every corridor. You shall prove your spirit among roaring crowds, where banners
+      wave and voices thunder in unison. Feasts rich with spice and fire await, served with the warm laughter of
+      companions. And no trial would be complete without the golden glow of taverns, where ales flow freely and secrets
+      are whispered late into the night. Beware: each challenge shall be revealed in its own time, and not a moment
+      sooner.
+    </p>
+    <p class="para">
+      To prepare, you must break the seal below. Therein you will find instructions on what to carry for your
+      forthcoming weekend. Follow them closely, for only then will you be ready to face the surprises set before you.
+    </p>
+    <div class="signature">
+      <p><strong>Yours most sincerely,</strong></p>
+      <p><em>Professor Minerva McGonagall</em><br/>Deputy Headmistress</p>
+    </div>
+
+    <div class="seal-wrap">
+      <div id="letterSeal" class="seal" role="button" aria-label="Break the seal for packing instructions">★</div>
+    </div>
+
+    <!-- Stage 3: Packing Instructions -->
+    <section id="reveal" class="hidden token">
+      <h3>Packing Instructions</h3>
+      <p class="para">Devon San, heed these hints well, for they are the keys to thriving in your trial:</p>
+      <ul>
+        <li>Garments sturdy enough for long days of wandering and sudden bursts of excitement.</li>
+        <li>Cloth that can shift from daylight errands to evening feasts with ease.</li>
+        <li>Footwear that grants both swiftness and endurance upon uneven ground.</li>
+        <li>A trusted device for capturing memories and glimpses of magic.</li>
+        <li>Proof of your identity and right of passage across the seas.</li>
+      </ul>
+      <p class="para">Prepare these well, and let curiosity be your compass.</p>
+      <p class="muted">Further surprises shall unfold only in their proper hour...</p>
+    </section>
+  </main>
+</div>
+
+<!-- Background music embedded -->
+<audio id="bgm" src="Harry_Potter_Theme_Song_Hedwigs_Theme.mp3" preload="auto"></audio>
+
+<script>
+  const envelope = document.getElementById("envelope");
+  const envelopeSeal = document.getElementById("envelopeSeal");
+  const letter = document.getElementById("letter");
+  const letterSeal = document.getElementById("letterSeal");
+  const reveal = document.getElementById("reveal");
+  const bgm = document.getElementById("bgm");
+
+  envelopeSeal.addEventListener("click", ()=>{
+    envelope.classList.add("hidden");
+    letter.classList.remove("hidden");
+    letter.classList.add("fade-in");
+    if(bgm && bgm.src){ bgm.volume=0.5; bgm.play().catch(()=>{}); }
+  });
+
+  letterSeal.addEventListener("click", ()=>{
+    reveal.classList.remove("hidden");
+    reveal.scrollIntoView({behavior:"smooth"});
+  });
+</script>
+</body>
+</html>
